@@ -1,7 +1,12 @@
 import "./App.css";
+import GenColor from "./components/GenColor";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <GenColor />
+    </>
+  );
 }
 
 export default App;

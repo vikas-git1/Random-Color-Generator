@@ -26,6 +26,7 @@ const GenColor = () => {
   };
   return (
     <>
+      <h1 style={{ color: color }}>Random Color Generator</h1>
       <div className="container" style={{ backgroundColor: color }}>
         <button className="btn genColor" onClick={handleGenerateColor}>
           Generate Color

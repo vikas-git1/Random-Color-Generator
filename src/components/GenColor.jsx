@@ -1,8 +1,7 @@
 import React, { useState, useRef } from "react";
 import "./GenColor.css";
 const GenColor = () => {
-  const [color, setColor] = useState("black");
-  const [colorCode, setColorCode] = useState("");
+  const [color, setColor] = useState("white");
   const colorCodeRef = useRef(null);
   let chars = "1234567890ABCDEF";
 
@@ -14,15 +13,14 @@ const GenColor = () => {
     }
 
     setColor(randomColor);
-    setColorCode(randomColor);
   };
 
   const handleCopyPass = () => {
     colorCodeRef.current.select();
 
     navigator.clipboard
-      .writeText(colorCode)
-      .then(() => alert(`Color Code: ${colorCode} copied`));
+      .writeText(color)
+      .then(() => alert(`Color Code: ${color} copied`));
   };
   return (
     <>
@@ -39,7 +37,7 @@ const GenColor = () => {
       <input
         type="text"
         className="colorCode"
-        value={colorCode}
+        value={color}
         ref={colorCodeRef}
         style={{ backgroundColor: color }}
         readOnly
